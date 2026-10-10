@@ -1,0 +1,161 @@
+{
+  "accueil": {
+    "nom": "Marcella Chanhoun",
+    "titre": "Développeuse web et mobile",
+    "accroche": "Étudiante en BUT 3 Informatique à Belfort. Je conçois des applications avec Laravel, React et Flutter, et je les mets en ligne pour qu'on puisse les essayer.",
+    "disponibilite": "Stage de 3 mois",
+    "disponibiliteDate": "à partir du 11 janvier 2027"
+  },
+  "apropos": {
+    "photo": "img/marcella.jpg",
+    "paragraphes": [
+      "Je suis en BUT 3 Informatique, parcours réalisation d'applications, à l'IUT Nord Franche-Comté. Avant d'arriver en France, j'ai obtenu une licence en analyse informatique et programmation à l'ENEAM, à Cotonou, et commencé un master en informatique décisionnelle.",
+      "Ce double parcours m'a appris tout le cycle d'un projet : l'analyse et la modélisation UML, le développement, puis la mise en production. Trois stages en entreprise au Bénin m'ont permis de travailler sur de vraies applications, en équipe.",
+      "Je recherche un stage de 3 mois à partir de janvier 2027 pour progresser au sein d'une équipe de développement."
+    ],
+    "qualites": ["Rigoureuse", "Curieuse", "Esprit d'équipe", "Organisée"],
+    "cv": "cv/CV_Marcella_Chanhoun.pdf",
+    "formations": [
+      { "periode": "2026 – 2027", "intitule": "BUT 3 Informatique, parcours réalisation d'applications", "lieu": "IUT Nord Franche-Comté, Belfort" },
+      { "periode": "2025 – 2026", "intitule": "Master 1 Informatique décisionnelle", "lieu": "ENEAM-UAC, Cotonou" },
+      { "periode": "2022 – 2025", "intitule": "Licence en analyse informatique et programmation", "lieu": "ENEAM-UAC, Cotonou" }
+    ],
+    "veille": "Je me tiens informée principalement grâce à LinkedIn, où je suis des développeurs, des entreprises du numérique et des communautés autour de Laravel, React et Flutter. J'y découvre les nouvelles versions des outils que j'utilise et des retours d'expérience de professionnels."
+  },
+  "services": [
+    { "titre": "Applications web", "description": "Des applications complètes avec Laravel et React : espaces membres, tableaux de bord, paiement en ligne." },
+    { "titre": "Applications mobiles", "description": "Des applications Flutter pour Android, iOS et le web, reliées à une API." },
+    { "titre": "API et bases de données", "description": "La conception de la base (UML, MySQL, PostgreSQL) et d'API REST sécurisées." },
+    { "titre": "Mise en ligne", "description": "La conteneurisation avec Docker et le déploiement, pour que chaque projet soit testable en ligne." }
+  ],
+  "competences": [
+    { "titre": "Langages", "elements": "PHP, JavaScript, Dart, Java, Python, SQL, HTML, CSS" },
+    { "titre": "Frameworks", "elements": "Laravel, React, Next.js, Flutter, Node.js, Bootstrap" },
+    { "titre": "Bases de données", "elements": "MySQL, PostgreSQL, SQLite" },
+    { "titre": "Outils", "elements": "Git, GitHub, GitLab, Docker, Figma, Canva" },
+    { "titre": "Méthodes", "elements": "Analyse informatique, modélisation UML" },
+    { "titre": "Savoir-être", "elements": "Rigueur, curiosité, esprit d'équipe, organisation" }
+  ],
+  "experiences": [
+    {
+      "periode": "Mars – juin 2026",
+      "poste": "Stage de développeuse web et mobile",
+      "entreprise": "Megatech, Cotonou",
+      "missions": [
+        "Intégration de nouvelles fonctionnalités à l'application mobile de gestion des événements de l'entreprise",
+        "Maintenance de l'application et correction de bugs"
+      ],
+      "technologies": ""
+    },
+    {
+      "periode": "Mars – juin 2025",
+      "poste": "Stage de développeuse front-end",
+      "entreprise": "Inawo Technologies, Cotonou",
+      "missions": [],
+      "technologies": "React, JavaScript, API REST"
+    },
+    {
+      "periode": "Mai – juin 2024",
+      "poste": "Stage de développeuse web",
+      "entreprise": "Fun High Tech, Abomey-Calavi",
+      "missions": [],
+      "technologies": "PHP, Bootstrap"
+    }
+  ],
+  "projets": [
+    {
+      "titre": "Market'Art",
+      "resume": "Une marketplace où des artisans vendent leurs créations, avec un espace client, un espace artisan et une administration.",
+      "cadre": "Projet universitaire, licence 3e année (ENEAM), puis poursuivi seule",
+      "dates": "Novembre 2024 – janvier 2025, reprise en 2026",
+      "equipe": "",
+      "role": "J'ai développé l'espace administrateur et l'espace artisan, puis j'ai repris le projet seule pour le sécuriser et le mettre en ligne.",
+      "fonctionnalites": "",
+      "defi": "Un artisan pouvait voir et modifier les articles des autres. J'ai mis en place un contrôle d'accès par rôle et filtré chaque requête sur l'utilisateur connecté.",
+      "technologies": "Laravel 10, React avec Inertia.js, Blade, MySQL, Docker",
+      "format": "ecran",
+      "images": [
+        { "src": "img/marketart-client.jpg", "alt": "Catalogue des articles vu par un client sur Market'Art" },
+        { "src": "img/marketart-artisan.jpg", "alt": "Inventaire d'un artisan avec ses articles et leurs prix" }
+      ],
+      "demo": {
+        "lien": "https://marketart.onrender.com",
+        "comptes": [
+          { "libelle": "Artisan", "valeur": "artisan@demo.fr" },
+          { "libelle": "Client", "valeur": "client@demo.fr" },
+          { "libelle": "Mot de passe", "valeur": "password" }
+        ],
+        "note": ""
+      },
+      "liens": [
+        { "libelle": "Code source", "url": "https://github.com/peace042005/marketplace-de-produits-artisanaux" }
+      ]
+    },
+    {
+      "titre": "FitSense",
+      "resume": "Une plateforme de salles de sport : on trouve une salle sur la carte, on s'y abonne et on achète des équipements, avec un paiement Mobile Money ou carte.",
+      "cadre": "Projet universitaire, licence (ENEAM)",
+      "dates": "Juin – juillet 2024, mise en ligne en 2026",
+      "equipe": "",
+      "role": "",
+      "fonctionnalites": "Trois espaces (administrateur, gérant de salle et utilisateur), carte des salles, abonnements, vente d'équipements et e-mails de confirmation.",
+      "defi": "Un paiement était validé à partir d'une information envoyée par le navigateur, donc falsifiable. Le serveur vérifie maintenant chaque transaction directement auprès de FedaPay, y compris le montant.",
+      "technologies": "Laravel 11, Blade, Bootstrap, FedaPay, Google Maps, Docker",
+      "format": "ecran",
+      "images": [
+        { "src": "img/fitsense-accueil.jpg", "alt": "Page d'accueil de FitSense avec la liste des salles de sport" },
+        { "src": "img/fitsense-compte.jpg", "alt": "Espace utilisateur avec son abonnement et ses achats" }
+      ],
+      "demo": {
+        "lien": "https://fitsense-3tot.onrender.com",
+        "comptes": [
+          { "libelle": "Utilisateur", "valeur": "user@user.com" },
+          { "libelle": "Gérant", "valeur": "manager@manager.com" },
+          { "libelle": "Mot de passe", "valeur": "123" }
+        ],
+        "note": "Paiements en mode test : aucun argent réel n'est débité."
+      },
+      "liens": [
+        { "libelle": "Code source", "url": "https://github.com/peace042005/Salle_de_gym" }
+      ]
+    },
+    {
+      "titre": "Tickify",
+      "resume": "Une application mobile de billetterie : on parcourt les événements, on achète un billet et on retrouve ses billets dans l'application.",
+      "cadre": "Projet universitaire (ENEAM)",
+      "dates": "Janvier – février 2025, version web en 2026",
+      "equipe": "4 personnes",
+      "role": "J'ai développé la fonctionnalité « Mes billets » (modèle de données, appel à l'API et page), puis préparé la version web et la mise en ligne.",
+      "fonctionnalites": "",
+      "defi": "L'adresse de l'API était écrite en dur dans l'application. Je l'ai rendue configurable, et la version web appelle automatiquement l'API du même site.",
+      "technologies": "Flutter, Dart, Laravel 10, Sanctum, Docker",
+      "format": "telephone",
+      "images": [
+        { "src": "img/tickify-accueil.jpg", "alt": "Écran d'accueil de Tickify avec les événements à venir" },
+        { "src": "img/tickify-billets.jpg", "alt": "Écran Mes billets avec les billets achetés" }
+      ],
+      "demo": {
+        "lien": "https://tickify-wm2d.onrender.com",
+        "comptes": [
+          { "libelle": "E-mail", "valeur": "demo@tickify.test" },
+          { "libelle": "Mot de passe", "valeur": "password" }
+        ],
+        "note": ""
+      },
+      "liens": [
+        { "libelle": "Code de l'application", "url": "https://github.com/peace042005/Tickify" },
+        { "libelle": "Code de l'API", "url": "https://github.com/peace042005/Tickify_Api" }
+      ]
+    }
+  ],
+  "contact": {
+    "message": "Merci de votre visite ! Vous proposez un stage à partir de janvier 2027, ou vous avez une question sur un projet ? Écrivez-moi, je vous réponds rapidement.",
+    "email": "marcellachanhoun6@gmail.com",
+    "confidentialite": "Vos informations servent uniquement à vous répondre. Elles ne sont ni conservées sur ce site ni transmises à des tiers.",
+    "liens": [
+      { "libelle": "GitHub", "url": "https://github.com/peace042005" },
+      { "libelle": "LinkedIn", "url": "https://www.linkedin.com/in/marcella-fifame-peace-gr%C3%A2ce-chanhoun-41750a35a" }
+    ]
+  },
+  "piedDePage": "Belfort, France. Français langue maternelle, anglais niveau scolaire. Permis B."
+}

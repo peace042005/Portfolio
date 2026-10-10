@@ -1,0 +1,46 @@
+# Robot qui refabrique portfolio.pdf à chaque modification du site.
+name: Générer le PDF du portfolio
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['portfolio.pdf']   # évite que le robot se relance sur son propre PDF
+  workflow_dispatch:                  # bouton « Run workflow » pour le lancer à la main
+
+permissions:
+  contents: write                     # autorise le robot à enregistrer le PDF dans le dépôt
+
+concurrency:
+  group: pdf
+  cancel-in-progress: true            # si deux modifications arrivent vite, seule la dernière compte
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer le navigateur
+        run: |
+          npm install --no-save playwright@1.56.0 http-server@14.1.1
+          npx playwright install --with-deps chromium
+
+      - name: Lancer le site en local
+        run: |
+          npx http-server -p 8080 -s . &
+          sleep 3
+
+      - name: Fabriquer le PDF
+        run: node scripts/generer-pdf.mjs
+
+      - name: Enregistrer le PDF dans le dépôt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio.pdf
+          git diff --cached --quiet || git commit -m "Mise à jour du PDF du portfolio"
+          git push

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcella Chanhoun, développeuse web et mobile (Laravel, React, Flutter)</title>
+<meta name="keywords" content="développeuse web, développeuse mobile, stage développement, Laravel, PHP, React, Flutter, BUT Informatique, Belfort, Marcella Chanhoun">
+<meta name="description" content="Étudiante en BUT 3 Informatique à Belfort, je cherche un stage de développement de 3 mois à partir du 11 janvier 2027. Projets Laravel, React et Flutter en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--
+  Ce fichier ne contient que la STRUCTURE du portfolio : le menu et les titres des sections.
+  Tout le texte vient de contenu.json, que js/site.js lit puis place dans les zones « data-zone ».
+  Pour modifier le contenu, on passe par le dashboard (/admin/), pas par ce fichier.
+-->
+
+<header class="barre">
+  <div class="wrap">
+    <a class="mark" href="#haut" data-zone="marque">Portfolio</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#competences">Compétences &amp; expériences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="bouton-pdf" href="portfolio.pdf" download="Portfolio_Marcella_Chanhoun.pdf">Portfolio en PDF</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="haut">
+  <main>
+    <div class="hero" data-zone="accueil"></div>
+
+    <section id="apropos">
+      <h2>À propos</h2>
+      <div class="apropos-grille">
+        <div class="colonne">
+          <article class="carte qui">
+            <h3>Qui suis-je ?</h3>
+            <div data-zone="qui"></div>
+          </article>
+          <div class="carte boite-cv" data-zone="cv"></div>
+        </div>
+        <div class="colonne">
+          <article class="carte formations">
+            <h3>Mes formations</h3>
+            <ol data-zone="formations"></ol>
+          </article>
+          <article class="carte veille">
+            <h3>Ma veille informatique</h3>
+            <div data-zone="veille"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Mes services</h2>
+      <div class="services" data-zone="services"></div>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences &amp; expériences</h2>
+      <h3 class="sous-titre">Compétences</h3>
+      <div class="competences" data-zone="competences"></div>
+      <h3 class="sous-titre">Expériences professionnelles</h3>
+      <ol class="experiences" data-zone="experiences"></ol>
+    </section>
+
+    <section id="projets">
+      <h2>Projets</h2>
+      <p class="intro">Les projets sont en ligne avec des comptes de démonstration : vous pouvez les tester vous-même. L'hébergement est gratuit, le premier chargement peut prendre une minute.</p>
+      <div class="projets" data-zone="projets"></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p class="intro" data-zone="contact-message"></p>
+      <div class="contact-grille">
+        <form class="carte" method="POST" data-zone="formulaire">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="cache" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" autocomplete="name" required>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <label class="accord">
+            <input type="checkbox" name="consentement" value="oui" required>
+            <span><strong>J'accepte la clause de confidentialité.</strong> <span data-zone="confidentialite"></span></span>
+          </label>
+          <button class="btn btn-main" type="submit">Envoyer le message</button>
+        </form>
+        <div data-zone="coordonnees"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-zone="pied"></footer>
+</div>
+
+<!-- Fenêtre « Voir détail » d'un projet -->
+<dialog id="detail" aria-labelledby="detail-titre">
+  <div class="detail-entete">
+    <h3 id="detail-titre"></h3>
+    <button class="fermer" type="button" aria-label="Fermer">Fermer</button>
+  </div>
+  <div class="detail-corps"></div>
+</dialog>
+
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tableau de bord du portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- Écran de connexion -->
+<main id="connexion" class="connexion" hidden>
+  <form class="boite" id="form-connexion">
+    <h1>Tableau de bord</h1>
+    <p>Pour modifier le portfolio, colle ton jeton d'accès GitHub. Il reste dans cet onglet et disparaît quand tu le fermes.</p>
+    <label for="jeton">Jeton d'accès GitHub</label>
+    <input id="jeton" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" required>
+    <button class="btn btn-main" type="submit">Se connecter</button>
+    <p class="erreur" id="erreur-connexion" role="alert"></p>
+    <p class="aide">Pas encore de jeton ? Le guide se trouve dans le fichier README du dépôt.</p>
+  </form>
+</main>
+
+<!-- Tableau de bord -->
+<div id="tableau" class="tableau" hidden>
+  <header class="haut">
+    <strong class="logo">Tableau de bord</strong>
+    <span class="etat" id="etat" role="status">Contenu chargé</span>
+    <div class="haut-actions">
+      <a class="btn btn-ghost" href="../" target="_blank" rel="noopener">Voir le site</a>
+      <button class="btn btn-ghost" id="bouton-apercu" type="button" aria-pressed="false">Aperçu</button>
+      <button class="btn btn-main" id="bouton-enregistrer" type="button" disabled>Enregistrer</button>
+      <button class="lien" id="bouton-deconnexion" type="button">Se déconnecter</button>
+    </div>
+  </header>
+
+  <nav class="sections" id="sections" aria-label="Sections du portfolio"></nav>
+
+  <main class="editeur" id="editeur"></main>
+
+  <aside class="apercu" id="apercu" aria-label="Aperçu du portfolio">
+    <div class="apercu-barre">
+      <span>Aperçu en direct</span>
+      <div class="bascule">
+        <button type="button" data-largeur="1280" aria-pressed="true">Ordinateur</button>
+        <button type="button" data-largeur="390" aria-pressed="false">Téléphone</button>
+      </div>
+    </div>
+    <div class="apercu-cadre" id="apercu-cadre">
+      <iframe id="apercu-iframe" src="../index.html" title="Aperçu du portfolio"></iframe>
+    </div>
+  </aside>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
