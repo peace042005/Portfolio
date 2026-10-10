@@ -7,7 +7,7 @@ import { chromium } from 'playwright';
 const ADRESSE = process.env.ADRESSE_SITE || 'http://localhost:8080/';
 const SORTIE = process.env.FICHIER_PDF || 'portfolio.pdf';
 // Adresse publique du site : les liens relatifs (ex. le CV) deviennent des liens complets dans le PDF.
-const SITE_PUBLIC = process.env.SITE_PUBLIC || 'https://marcella-chanhoun.netlify.app/';
+const SITE_PUBLIC = process.env.SITE_PUBLIC || 'https://portfolio-marcella-chanhoun.netlify.app/';
 
 const navigateur = await chromium.launch();
 const page = await navigateur.newPage();
