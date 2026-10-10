@@ -1,7 +1,7 @@
 # Portfolio de Marcella Chanhoun
 
-Site : https://marcella-chanhoun.netlify.app
-Tableau de bord : https://marcella-chanhoun.netlify.app/admin/
+Site : https://portfolio-marcella-chanhoun.netlify.app
+Tableau de bord : https://portfolio-marcella-chanhoun.netlify.app/admin/
 
 ## Comment ça marche
 
