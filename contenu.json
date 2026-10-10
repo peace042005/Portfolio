@@ -1,7 +1,7 @@
 {
   "accueil": {
     "nom": "Marcella Chanhoun",
-    "titre": "Développeuse web et mobile",
+    "titre": "Développeuse web et mobil",
     "accroche": "Étudiante en BUT 3 Informatique à Belfort. Je conçois des applications avec Laravel, React et Flutter, et je les mets en ligne pour qu'on puisse les essayer.",
     "disponibilite": "Stage de 3 mois",
     "disponibiliteDate": "à partir du 11 janvier 2027"
@@ -13,28 +13,75 @@
       "Ce double parcours m'a appris tout le cycle d'un projet : l'analyse et la modélisation UML, le développement, puis la mise en production. Trois stages en entreprise au Bénin m'ont permis de travailler sur de vraies applications, en équipe.",
       "Je recherche un stage de 3 mois à partir de janvier 2027 pour progresser au sein d'une équipe de développement."
     ],
-    "qualites": ["Rigoureuse", "Curieuse", "Esprit d'équipe", "Organisée"],
+    "qualites": [
+      "Rigoureuse",
+      "Curieuse",
+      "Esprit d'équipe",
+      "Organisée"
+    ],
     "cv": "cv/CV_Marcella_Chanhoun.pdf",
     "formations": [
-      { "periode": "2026 – 2027", "intitule": "BUT 3 Informatique, parcours réalisation d'applications", "lieu": "IUT Nord Franche-Comté, Belfort" },
-      { "periode": "2025 – 2026", "intitule": "Master 1 Informatique décisionnelle", "lieu": "ENEAM-UAC, Cotonou" },
-      { "periode": "2022 – 2025", "intitule": "Licence en analyse informatique et programmation", "lieu": "ENEAM-UAC, Cotonou" }
+      {
+        "periode": "2026 – 2027",
+        "intitule": "BUT 3 Informatique, parcours réalisation d'applications",
+        "lieu": "IUT Nord Franche-Comté, Belfort"
+      },
+      {
+        "periode": "2025 – 2026",
+        "intitule": "Master 1 Informatique décisionnelle",
+        "lieu": "ENEAM-UAC, Cotonou"
+      },
+      {
+        "periode": "2022 – 2025",
+        "intitule": "Licence en analyse informatique et programmation",
+        "lieu": "ENEAM-UAC, Cotonou"
+      }
     ],
     "veille": "Je me tiens informée principalement grâce à LinkedIn, où je suis des développeurs, des entreprises du numérique et des communautés autour de Laravel, React et Flutter. J'y découvre les nouvelles versions des outils que j'utilise et des retours d'expérience de professionnels."
   },
   "services": [
-    { "titre": "Applications web", "description": "Des applications complètes avec Laravel et React : espaces membres, tableaux de bord, paiement en ligne." },
-    { "titre": "Applications mobiles", "description": "Des applications Flutter pour Android, iOS et le web, reliées à une API." },
-    { "titre": "API et bases de données", "description": "La conception de la base (UML, MySQL, PostgreSQL) et d'API REST sécurisées." },
-    { "titre": "Mise en ligne", "description": "La conteneurisation avec Docker et le déploiement, pour que chaque projet soit testable en ligne." }
+    {
+      "titre": "Applications web",
+      "description": "Des applications complètes avec Laravel et React : espaces membres, tableaux de bord, paiement en ligne."
+    },
+    {
+      "titre": "Applications mobiles",
+      "description": "Des applications Flutter pour Android, iOS et le web, reliées à une API."
+    },
+    {
+      "titre": "API et bases de données",
+      "description": "La conception de la base (UML, MySQL, PostgreSQL) et d'API REST sécurisées."
+    },
+    {
+      "titre": "Mise en ligne",
+      "description": "La conteneurisation avec Docker et le déploiement, pour que chaque projet soit testable en ligne."
+    }
   ],
   "competences": [
-    { "titre": "Langages", "elements": "PHP, JavaScript, Dart, Java, Python, SQL, HTML, CSS" },
-    { "titre": "Frameworks", "elements": "Laravel, React, Next.js, Flutter, Node.js, Bootstrap" },
-    { "titre": "Bases de données", "elements": "MySQL, PostgreSQL, SQLite" },
-    { "titre": "Outils", "elements": "Git, GitHub, GitLab, Docker, Figma, Canva" },
-    { "titre": "Méthodes", "elements": "Analyse informatique, modélisation UML" },
-    { "titre": "Savoir-être", "elements": "Rigueur, curiosité, esprit d'équipe, organisation" }
+    {
+      "titre": "Langages",
+      "elements": "PHP, JavaScript, Dart, Java, Python, SQL, HTML, CSS"
+    },
+    {
+      "titre": "Frameworks",
+      "elements": "Laravel, React, Next.js, Flutter, Node.js, Bootstrap"
+    },
+    {
+      "titre": "Bases de données",
+      "elements": "MySQL, PostgreSQL, SQLite"
+    },
+    {
+      "titre": "Outils",
+      "elements": "Git, GitHub, GitLab, Docker, Figma, Canva"
+    },
+    {
+      "titre": "Méthodes",
+      "elements": "Analyse informatique, modélisation UML"
+    },
+    {
+      "titre": "Savoir-être",
+      "elements": "Rigueur, curiosité, esprit d'équipe, organisation"
+    }
   ],
   "experiences": [
     {
@@ -75,20 +122,38 @@
       "technologies": "Laravel 10, React avec Inertia.js, Blade, MySQL, Docker",
       "format": "ecran",
       "images": [
-        { "src": "img/marketart-client.jpg", "alt": "Catalogue des articles vu par un client sur Market'Art" },
-        { "src": "img/marketart-artisan.jpg", "alt": "Inventaire d'un artisan avec ses articles et leurs prix" }
+        {
+          "src": "img/marketart-client.jpg",
+          "alt": "Catalogue des articles vu par un client sur Market'Art"
+        },
+        {
+          "src": "img/marketart-artisan.jpg",
+          "alt": "Inventaire d'un artisan avec ses articles et leurs prix"
+        }
       ],
       "demo": {
         "lien": "https://marketart.onrender.com",
         "comptes": [
-          { "libelle": "Artisan", "valeur": "artisan@demo.fr" },
-          { "libelle": "Client", "valeur": "client@demo.fr" },
-          { "libelle": "Mot de passe", "valeur": "password" }
+          {
+            "libelle": "Artisan",
+            "valeur": "artisan@demo.fr"
+          },
+          {
+            "libelle": "Client",
+            "valeur": "client@demo.fr"
+          },
+          {
+            "libelle": "Mot de passe",
+            "valeur": "password"
+          }
         ],
         "note": ""
       },
       "liens": [
-        { "libelle": "Code source", "url": "https://github.com/peace042005/marketplace-de-produits-artisanaux" }
+        {
+          "libelle": "Code source",
+          "url": "https://github.com/peace042005/marketplace-de-produits-artisanaux"
+        }
       ]
     },
     {
@@ -103,20 +168,38 @@
       "technologies": "Laravel 11, Blade, Bootstrap, FedaPay, Google Maps, Docker",
       "format": "ecran",
       "images": [
-        { "src": "img/fitsense-accueil.jpg", "alt": "Page d'accueil de FitSense avec la liste des salles de sport" },
-        { "src": "img/fitsense-compte.jpg", "alt": "Espace utilisateur avec son abonnement et ses achats" }
+        {
+          "src": "img/fitsense-accueil.jpg",
+          "alt": "Page d'accueil de FitSense avec la liste des salles de sport"
+        },
+        {
+          "src": "img/fitsense-compte.jpg",
+          "alt": "Espace utilisateur avec son abonnement et ses achats"
+        }
       ],
       "demo": {
         "lien": "https://fitsense-3tot.onrender.com",
         "comptes": [
-          { "libelle": "Utilisateur", "valeur": "user@user.com" },
-          { "libelle": "Gérant", "valeur": "manager@manager.com" },
-          { "libelle": "Mot de passe", "valeur": "123" }
+          {
+            "libelle": "Utilisateur",
+            "valeur": "user@user.com"
+          },
+          {
+            "libelle": "Gérant",
+            "valeur": "manager@manager.com"
+          },
+          {
+            "libelle": "Mot de passe",
+            "valeur": "123"
+          }
         ],
         "note": "Paiements en mode test : aucun argent réel n'est débité."
       },
       "liens": [
-        { "libelle": "Code source", "url": "https://github.com/peace042005/Salle_de_gym" }
+        {
+          "libelle": "Code source",
+          "url": "https://github.com/peace042005/Salle_de_gym"
+        }
       ]
     },
     {
@@ -131,20 +214,38 @@
       "technologies": "Flutter, Dart, Laravel 10, Sanctum, Docker",
       "format": "telephone",
       "images": [
-        { "src": "img/tickify-accueil.jpg", "alt": "Écran d'accueil de Tickify avec les événements à venir" },
-        { "src": "img/tickify-billets.jpg", "alt": "Écran Mes billets avec les billets achetés" }
+        {
+          "src": "img/tickify-accueil.jpg",
+          "alt": "Écran d'accueil de Tickify avec les événements à venir"
+        },
+        {
+          "src": "img/tickify-billets.jpg",
+          "alt": "Écran Mes billets avec les billets achetés"
+        }
       ],
       "demo": {
         "lien": "https://tickify-wm2d.onrender.com",
         "comptes": [
-          { "libelle": "E-mail", "valeur": "demo@tickify.test" },
-          { "libelle": "Mot de passe", "valeur": "password" }
+          {
+            "libelle": "E-mail",
+            "valeur": "demo@tickify.test"
+          },
+          {
+            "libelle": "Mot de passe",
+            "valeur": "password"
+          }
         ],
         "note": ""
       },
       "liens": [
-        { "libelle": "Code de l'application", "url": "https://github.com/peace042005/Tickify" },
-        { "libelle": "Code de l'API", "url": "https://github.com/peace042005/Tickify_Api" }
+        {
+          "libelle": "Code de l'application",
+          "url": "https://github.com/peace042005/Tickify"
+        },
+        {
+          "libelle": "Code de l'API",
+          "url": "https://github.com/peace042005/Tickify_Api"
+        }
       ]
     }
   ],
@@ -153,8 +254,14 @@
     "email": "marcellachanhoun6@gmail.com",
     "confidentialite": "Vos informations servent uniquement à vous répondre. Elles ne sont ni conservées sur ce site ni transmises à des tiers.",
     "liens": [
-      { "libelle": "GitHub", "url": "https://github.com/peace042005" },
-      { "libelle": "LinkedIn", "url": "https://www.linkedin.com/in/marcella-fifame-peace-gr%C3%A2ce-chanhoun-41750a35a" }
+      {
+        "libelle": "GitHub",
+        "url": "https://github.com/peace042005"
+      },
+      {
+        "libelle": "LinkedIn",
+        "url": "https://www.linkedin.com/in/marcella-fifame-peace-gr%C3%A2ce-chanhoun-41750a35a"
+      }
     ]
   },
   "piedDePage": "Belfort, France. Français langue maternelle, anglais niveau scolaire. Permis B."
