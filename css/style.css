@@ -3,14 +3,15 @@
    ========================================================= */
 
 :root {
-  --paper: #F3F5F2;
-  --surface: #FFFFFF;
-  --ink: #18243A;
-  --muted: #5D6878;
-  --line: #D6DCD5;
-  --indigo: #3346A8;
-  --saffron: #F0B43C;
-  --live: #1F8A5B;
+  /* Couleurs reprises du CV */
+  --paper: #EEECEA;         /* gris chaud : colonne de gauche du CV */
+  --surface: #FFFFFF;       /* blanc : fond principal du CV */
+  --ink: #161A1C;           /* noir du texte */
+  --muted: #5F6264;         /* gris des textes secondaires */
+  --line: #DAD6D3;          /* traits et bordures */
+  --accent: #9E938D;        /* taupe du sous-titre du CV (décor, grands textes) */
+  --accent-fonce: #6E625C;  /* taupe foncé, lisible pour les liens et petits textes */
+  --live: #1F8A5B;          /* vert « démo en ligne » */
   --display: "Bricolage Grotesque", system-ui, sans-serif;
   --body: "Public Sans", system-ui, sans-serif;
   --rayon: 10px;
@@ -28,9 +29,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--indigo); text-underline-offset: 3px; }
+a { color: var(--accent-fonce); text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
-:focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--accent-fonce); outline-offset: 3px; border-radius: 4px; }
 [hidden] { display: none !important; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -47,23 +48,36 @@ a:hover { color: var(--ink); }
   font: 600 1rem var(--body); text-decoration: none; border: 2px solid var(--ink); cursor: pointer;
 }
 .btn-main { background: var(--ink); color: var(--paper); }
-.btn-main:hover { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+.btn-main:hover { background: var(--accent-fonce); border-color: var(--accent-fonce); color: #fff; }
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { background: var(--surface); color: var(--ink); }
 
 /* ---------- Menu ---------- */
 .barre {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(243, 245, 242, .94); backdrop-filter: blur(6px);
+  background: rgba(238, 236, 234, .94); backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
 .barre .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 16px; }
-.mark { font-family: var(--display); font-weight: 800; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+.logo { display: flex; color: var(--ink); border-radius: 10px; }
+.logo-mc { display: block; }
+.logo-mc path { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; }
+.logo-mc .trait-c { stroke: var(--accent); }
+.logo-mc .trait-m { stroke: var(--ink); }
+.barre nav { margin-left: auto; }
+.icones { display: flex; align-items: center; gap: 6px; }
+.reseaux { display: contents; }
+.icone {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  color: var(--ink); border: 1.5px solid var(--line); background: var(--surface);
+}
+.icone svg { width: 19px; height: 19px; }
+.icone:hover { color: #fff; background: var(--ink); border-color: var(--ink); }
+.icone.bouton-pdf { background: var(--ink); color: #fff; border-color: var(--ink); }
+.icone.bouton-pdf:hover { background: var(--accent-fonce); border-color: var(--accent-fonce); }
 .barre nav ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
 .barre nav a { display: block; padding: 8px 11px; border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: .96rem; }
 .barre nav a:hover { background: var(--surface); }
-.barre nav a.bouton-pdf { background: var(--ink); color: var(--paper); margin-left: 8px; }
-.barre nav a.bouton-pdf:hover { background: var(--indigo); color: #fff; }
 .menu-btn {
   display: none; font: 600 1rem var(--body); color: var(--ink); background: var(--surface);
   border: 2px solid var(--ink); border-radius: 6px; padding: 8px 14px; cursor: pointer;
@@ -77,11 +91,11 @@ section[id] { scroll-margin-top: 80px; }
   font-size: clamp(3rem, 9vw, 6.4rem); line-height: .92; letter-spacing: -.035em;
   margin: 0 0 20px;
 }
-.hero .titre { font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--indigo); margin: 0 0 16px; }
+.hero .titre { font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--accent-fonce); margin: 0 0 16px; }
 .hero .lede { font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.5; max-width: 34em; margin: 0 0 32px; }
 .dispo {
   display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
-  background: var(--saffron); padding: 14px 20px; border-radius: 6px; margin: 0;
+  background: var(--accent); padding: 14px 20px; border-radius: 6px; margin: 0;
 }
 .dispo strong { font-family: var(--display); font-size: 1.3rem; font-weight: 700; }
 .hero .actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
@@ -116,15 +130,15 @@ h3, h4 { font-family: var(--display); letter-spacing: -.01em; line-height: 1.2; 
 .formations li { display: grid; gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .formations li:last-child { border-bottom: 0; padding-bottom: 0; }
 .formations li:first-child { padding-top: 0; }
-.formations .quand { color: var(--indigo); font-weight: 600; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.formations .quand { color: var(--accent-fonce); font-weight: 600; font-size: .9rem; font-variant-numeric: tabular-nums; }
 .formations li span:not(.quand) { display: block; color: var(--muted); font-size: .95rem; }
-.veille { border-left: 6px solid var(--saffron); }
+.veille { border-left: 6px solid var(--accent); }
 .veille p { margin: 0; }
 
 /* ---------- Services ---------- */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
 .service { border-top: 3px solid var(--ink); padding-top: 16px; }
-.service .num { font-family: var(--display); font-weight: 800; color: var(--saffron); font-size: 1.1rem; }
+.service .num { font-family: var(--display); font-weight: 800; color: var(--accent); font-size: 1.1rem; }
 .service h3 { font-size: 1.25rem; margin: 6px 0 8px; }
 .service p { margin: 0; color: var(--muted); }
 
@@ -134,7 +148,7 @@ h3, h4 { font-family: var(--display); letter-spacing: -.01em; line-height: 1.2; 
 .competences p { margin: 0; color: var(--muted); }
 .experiences { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 .experience { display: grid; grid-template-columns: 10rem 1fr; gap: 24px; }
-.experience .quand { color: var(--indigo); font-weight: 600; font-variant-numeric: tabular-nums; }
+.experience .quand { color: var(--accent-fonce); font-weight: 600; font-variant-numeric: tabular-nums; }
 .experience h4 { font-size: 1.2rem; margin: 0 0 2px; }
 .experience .lieu { margin: 0 0 10px; color: var(--muted); }
 .experience ul { margin: 0 0 10px; padding-left: 1.1em; }
@@ -176,10 +190,10 @@ h3, h4 { font-family: var(--display); letter-spacing: -.01em; line-height: 1.2; 
 .acces dt { color: var(--muted); font-size: .92rem; }
 .acces dd { margin: 0; font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: .95rem; overflow-wrap: anywhere; }
 .copier {
-  font: 600 .82rem var(--body); color: var(--indigo); background: none;
+  font: 600 .82rem var(--body); color: var(--accent-fonce); background: none;
   border: 1px solid var(--line); border-radius: 4px; padding: 3px 9px; cursor: pointer;
 }
-.copier:hover { border-color: var(--indigo); }
+.copier:hover { border-color: var(--accent-fonce); }
 .acces .lien-demo { margin: 0; font-weight: 600; }
 .acces .lien-demo span { display: none; }
 .acces .note { color: var(--muted); font-size: .85rem; margin: 10px 0 0; }
@@ -193,9 +207,9 @@ h3, h4 { font-family: var(--display); letter-spacing: -.01em; line-height: 1.2; 
 dialog {
   width: min(860px, calc(100% - 32px)); max-height: calc(100vh - 48px);
   padding: 0; border: 0; border-radius: 14px; background: var(--surface); color: var(--ink);
-  box-shadow: 0 24px 60px rgba(24, 36, 58, .3);
+  box-shadow: 0 24px 60px rgba(22, 26, 28, .3);
 }
-dialog::backdrop { background: rgba(24, 36, 58, .6); }
+dialog::backdrop { background: rgba(22, 26, 28, .6); }
 .detail-entete {
   position: sticky; top: 0; z-index: 1; background: var(--surface);
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
@@ -213,18 +227,22 @@ form input, form textarea {
   width: 100%; font: inherit; color: var(--ink); background: var(--surface);
   border: 2px solid var(--line); border-radius: 6px; padding: 10px 12px; margin-bottom: 16px;
 }
-form input:focus, form textarea:focus { border-color: var(--indigo); outline: none; }
+form input:focus, form textarea:focus { border-color: var(--accent-fonce); outline: none; }
 form textarea { min-height: 150px; resize: vertical; }
 form .accord { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: .92rem; color: var(--muted); margin: 0 0 18px; }
-form .accord input { width: 18px; height: 18px; margin: 3px 0 0; flex: none; accent-color: var(--indigo); }
+form .accord input { width: 18px; height: 18px; margin: 3px 0 0; flex: none; accent-color: var(--accent-fonce); }
 form .accord strong { color: var(--ink); }
 .cache { position: absolute; left: -9999px; }
+.retour { margin: 14px 0 0; font-weight: 600; }
+.retour:empty { display: none; }
+.retour.ok { color: var(--live); }
+.retour.erreur { color: #B3261E; }
 .contact .mail {
   font-family: var(--display); font-weight: 700; font-size: clamp(1.25rem, 2.4vw, 1.75rem);
   letter-spacing: -.02em; color: var(--ink); text-decoration-thickness: 3px;
-  text-decoration-color: var(--saffron); overflow-wrap: anywhere;
+  text-decoration-color: var(--accent); overflow-wrap: anywhere;
 }
-.contact .mail:hover { color: var(--indigo); }
+.contact .mail:hover { color: var(--accent-fonce); }
 .contact .autres { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; font-weight: 600; }
 footer { color: var(--muted); font-size: .9rem; padding: 24px 0 40px; border-top: 1px solid var(--line); }
 
@@ -235,7 +253,8 @@ footer { color: var(--muted); font-size: .9rem; padding: 24px 0 40px; border-top
   .barre nav { position: absolute; top: 64px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); display: none; }
   .barre nav.ouvert { display: block; }
   .barre nav ul { flex-direction: column; align-items: stretch; padding: 8px 16px 16px; }
-  .barre nav a.bouton-pdf { margin: 8px 0 0; text-align: center; }
+  .icones { margin-left: auto; }
+  .menu-btn { margin-left: 4px; }
   .hero { padding: 56px 0 48px; }
   section { padding: 56px 0; }
   .apropos-grille, .contact-grille { grid-template-columns: 1fr; }
@@ -250,10 +269,49 @@ footer { color: var(--muted); font-size: .9rem; padding: 24px 0 40px; border-top
 }
 
 /* =========================================================
+   Animations (désactivées si le visiteur préfère moins de mouvement)
+   ========================================================= */
+@media (prefers-reduced-motion: no-preference) {
+  /* Le logo se dessine au chargement */
+  .logo-mc path { animation: tracer 1.1s cubic-bezier(.6, 0, .2, 1) both; }
+  .logo-mc .trait-m { animation-delay: .45s; }
+  .logo:hover .logo-mc .trait-c { animation: tracer .9s cubic-bezier(.6, 0, .2, 1) both; }
+
+  /* L'accueil apparaît ligne par ligne */
+  .hero > * { animation: monter .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero > :nth-child(2) { animation-delay: .12s; }
+  .hero > :nth-child(3) { animation-delay: .24s; }
+  .hero > :nth-child(4) { animation-delay: .36s; }
+
+  /* Les blocs apparaissent quand on fait défiler (classe ajoutée par js/site.js) */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--delai, 0ms); }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* Survol */
+  .btn, .icone, .barre nav a { transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+  .btn:hover, .icone:hover { transform: translateY(-2px); }
+  .projet { transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s, opacity .7s ease; }
+  .projet.visible:hover, .projet:not(.reveal):hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(22, 26, 28, .12); }
+  .vignette img { transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+  .projet:hover .vignette img { transform: scale(1.04); }
+  .service { transition: border-color .3s; }
+  .service:hover { border-top-color: var(--accent); }
+  .qualites li { transition: background-color .2s, transform .2s; }
+  .qualites li:hover { background: var(--surface); transform: translateY(-2px); }
+  dialog[open] { animation: monter .35s cubic-bezier(.2, .7, .2, 1); }
+  dialog[open]::backdrop { animation: fondu .35s ease; }
+}
+@keyframes tracer { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes monter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
+
+/* =========================================================
    Version PDF
    La classe « mode-pdf » est ajoutée par scripts/generer-pdf.mjs
    ========================================================= */
 .mode-pdf body { background: #fff; }
+.mode-pdf *, .mode-pdf *::before { animation: none !important; transition: none !important; }
+.mode-pdf .reveal { opacity: 1 !important; transform: none !important; }
 .mode-pdf .barre { position: static; background: #fff; backdrop-filter: none; }
 .mode-pdf .bouton-pdf,
 .mode-pdf .menu-btn,
@@ -287,7 +345,7 @@ footer { color: var(--muted); font-size: .9rem; padding: 24px 0 40px; border-top
 .mode-pdf .projet { break-inside: auto; }
 .mode-pdf h2, .mode-pdf h3, .mode-pdf h4 { break-after: avoid; }
 .mode-pdf #apropos, .mode-pdf #projets, .mode-pdf #competences { break-before: page; }
-.mode-pdf .hero { min-height: 250mm; display: flex; flex-direction: column; justify-content: center; } /* page de garde */
+.mode-pdf .hero { min-height: 250mm; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; } /* page de garde */
 .mode-pdf .contact { padding-bottom: 12px; }
 .mode-pdf footer { padding: 12px 0 0; break-before: avoid; }
 .mode-pdf .projet + .projet { break-before: page; }

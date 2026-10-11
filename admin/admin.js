@@ -108,9 +108,10 @@
     { id: 'contact', titre: 'Contact', ancre: 'contact', champ: {
       cle: 'contact', type: 'objet', champs: [
         { cle: 'message', label: 'Petit message', type: 'texteLong' },
-        { cle: 'email', label: 'Adresse e-mail', type: 'email', aide: 'Elle reçoit aussi les messages du formulaire.' },
+        { cle: 'email', label: 'Adresse e-mail', type: 'email', aide: 'Elle reçoit les messages du formulaire. Si tu la changes, le premier message envoyé déclenche un e-mail d\'activation de FormSubmit à valider.' },
         { cle: 'confidentialite', label: 'Clause de confidentialité', type: 'texteLong' },
-        { cle: 'liens', label: 'Liens', type: 'liste', titreElement: 'libelle', ajouter: 'Ajouter un lien', champs: [
+        { cle: 'liens', label: 'Liens', type: 'liste', titreElement: 'libelle', ajouter: 'Ajouter un lien',
+          aide: 'Les liens GitHub et LinkedIn apparaissent aussi en icônes en haut du site.', champs: [
           { cle: 'libelle', label: 'Texte du lien', type: 'texte', aide: 'Ex. : LinkedIn' },
           { cle: 'url', label: 'Adresse', type: 'url' }
         ] }

@@ -1,13 +1,14 @@
 /* Tableau de bord : mêmes couleurs que le portfolio */
 :root {
-  --paper: #F3F5F2;
-  --surface: #FFFFFF;
-  --ink: #18243A;
-  --muted: #5D6878;
-  --line: #D6DCD5;
-  --indigo: #3346A8;
-  --saffron: #F0B43C;
-  --live: #1F8A5B;
+  /* Couleurs reprises du CV */
+  --paper: #EEECEA;         /* gris chaud : colonne de gauche du CV */
+  --surface: #FFFFFF;       /* blanc : fond principal du CV */
+  --ink: #161A1C;           /* noir du texte */
+  --muted: #5F6264;         /* gris des textes secondaires */
+  --line: #DAD6D3;          /* traits et bordures */
+  --accent: #9E938D;        /* taupe du sous-titre du CV (décor, grands textes) */
+  --accent-fonce: #6E625C;  /* taupe foncé, lisible pour les liens et petits textes */
+  --live: #1F8A5B;          /* vert « démo en ligne » */
   --rouge: #B3261E;
   --display: "Bricolage Grotesque", system-ui, sans-serif;
   --body: "Public Sans", system-ui, sans-serif;
@@ -17,7 +18,7 @@
 [hidden] { display: none !important; }
 html, body { height: 100%; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.5 var(--body); }
-:focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--accent-fonce); outline-offset: 2px; }
 
 .btn {
   display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 6px;
@@ -25,10 +26,10 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.
   white-space: nowrap;
 }
 .btn-main { background: var(--ink); color: #fff; }
-.btn-main:hover:not(:disabled) { background: var(--indigo); border-color: var(--indigo); }
+.btn-main:hover:not(:disabled) { background: var(--accent-fonce); border-color: var(--accent-fonce); }
 .btn-main:disabled { opacity: .45; cursor: default; }
 .btn-ghost { background: var(--surface); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--indigo); color: var(--indigo); }
+.btn-ghost:hover { border-color: var(--accent-fonce); color: var(--accent-fonce); }
 .lien { background: none; border: 0; color: var(--muted); font: 600 .9rem var(--body); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Connexion ---------- */
@@ -38,7 +39,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.
 .boite p { color: var(--muted); margin: 0 0 20px; }
 .boite label { display: block; font-weight: 600; margin-bottom: 6px; }
 .boite input { width: 100%; font: inherit; padding: 10px 12px; border: 2px solid var(--line); border-radius: 6px; margin-bottom: 16px; }
-.boite input:focus { border-color: var(--indigo); outline: none; }
+.boite input:focus { border-color: var(--accent-fonce); outline: none; }
 .boite .btn { width: 100%; justify-content: center; padding: 11px; }
 .boite .erreur { color: var(--rouge); font-weight: 600; margin: 12px 0 0; min-height: 1.5em; }
 .boite .aide { font-size: .88rem; margin: 8px 0 0; }
@@ -83,14 +84,14 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.
   border: 1.5px solid var(--line); border-radius: 6px; padding: 8px 10px;
 }
 .champ textarea { resize: vertical; min-height: 70px; }
-.champ input:focus, .champ textarea:focus, .champ select:focus { border-color: var(--indigo); outline: none; }
+.champ input:focus, .champ textarea:focus, .champ select:focus { border-color: var(--accent-fonce); outline: none; }
 
 .cadre { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px 0; margin: 0 0 18px; background: var(--paper); }
 .cadre legend { font-weight: 600; padding: 0 6px; }
 
 .elements { display: grid; gap: 8px; margin-bottom: 10px; }
 .element { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
-.element[open] { border-color: var(--indigo); }
+.element[open] { border-color: var(--accent-fonce); }
 .element summary {
   display: flex; align-items: center; gap: 10px; padding: 8px 10px 8px 14px; cursor: pointer; list-style: none;
 }
@@ -106,7 +107,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.
   font: 600 .82rem var(--body); background: var(--surface); color: var(--ink);
   border: 1px solid var(--line); border-radius: 5px; padding: 3px 8px; cursor: pointer;
 }
-.petit:hover:not(:disabled) { border-color: var(--indigo); color: var(--indigo); }
+.petit:hover:not(:disabled) { border-color: var(--accent-fonce); color: var(--accent-fonce); }
 .petit:disabled { opacity: .35; cursor: default; }
 .petit.danger:hover { border-color: var(--rouge); color: var(--rouge); }
 
@@ -126,7 +127,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.
 .fichier .erreur { color: var(--rouge); margin: 0; font-size: .88rem; }
 
 /* ---------- Aperçu ---------- */
-.apercu { grid-area: apercu; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; background: #E6EAE5; }
+.apercu { grid-area: apercu; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; background: #E2DFDC; }
 .apercu-barre { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 14px; font-weight: 600; font-size: .9rem; color: var(--muted); }
 .bascule { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
 .bascule button { font: 600 .82rem var(--body); border: 0; background: var(--surface); padding: 5px 10px; cursor: pointer; color: var(--ink); }

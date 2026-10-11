@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,8 +22,12 @@
 
 <header class="barre">
   <div class="wrap">
-    <a class="mark" href="#haut" data-zone="marque">Portfolio</a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <a class="logo" href="#haut" aria-label="Marcella Chanhoun, retour en haut de la page" title="Marcella Chanhoun">
+      <svg class="logo-mc" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+        <path class="trait-c" pathLength="100" d="M38.5 13.5A17.5 17.5 0 1 0 38.5 34.5" />
+        <path class="trait-m" pathLength="100" d="M15 31V17l7.5 9.5L30 17v14" />
+      </svg>
+    </a>
     <nav id="menu" aria-label="Menu principal">
       <ul>
         <li><a href="#apropos">À propos</a></li>
@@ -30,9 +35,16 @@
         <li><a href="#competences">Compétences &amp; expériences</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="bouton-pdf" href="portfolio.pdf" download="Portfolio_Marcella_Chanhoun.pdf">Portfolio en PDF</a></li>
       </ul>
     </nav>
+    <div class="icones">
+      <span class="reseaux" data-zone="reseaux"></span>
+      <a class="icone bouton-pdf" href="portfolio.pdf" download="Portfolio_Marcella_Chanhoun.pdf"
+         aria-label="Télécharger le portfolio en PDF" title="Télécharger le portfolio (PDF)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
   </div>
 </header>
 
@@ -101,6 +113,7 @@
             <span><strong>J'accepte la clause de confidentialité.</strong> <span data-zone="confidentialite"></span></span>
           </label>
           <button class="btn btn-main" type="submit">Envoyer le message</button>
+          <p class="retour" role="status"></p>
         </form>
         <div data-zone="coordonnees"></div>
       </div>
