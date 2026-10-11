@@ -50,7 +50,7 @@
     },
     {
       "titre": "API et bases de données",
-      "description": "La conception de la base (UML, MySQL, PostgreSQL) et d'API REST sécurisées."
+      "description": "La conception de la base et d'API REST sécurisées."
     },
     {
       "titre": "Mise en ligne",
@@ -251,18 +251,9 @@
   ],
   "contact": {
     "message": "Merci de votre visite ! Vous proposez un stage à partir de janvier 2027, ou vous avez une question sur un projet ? Écrivez-moi, je vous réponds rapidement.",
-    "email": "marcellachanhoun6@gmail.com",
+    "email": "",
     "confidentialite": "Vos informations servent uniquement à vous répondre. Elles ne sont ni conservées sur ce site ni transmises à des tiers.",
-    "liens": [
-      {
-        "libelle": "GitHub",
-        "url": "https://github.com/peace042005"
-      },
-      {
-        "libelle": "LinkedIn",
-        "url": "https://www.linkedin.com/in/marcella-fifame-peace-gr%C3%A2ce-chanhoun-41750a35a"
-      }
-    ]
+    "liens": []
   },
   "piedDePage": ""
 }
