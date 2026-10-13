@@ -98,15 +98,24 @@
       "periode": "Mars – juin 2025",
       "poste": "Stage de développeuse front-end",
       "entreprise": "Inawo Technologies, Cotonou",
-      "missions": [],
-      "technologies": "React, JavaScript, API REST"
+      "missions": [
+        "Réalisation d'interfaces utilisateur avec React et JavaScript \n\n\n\n",
+        "Intégration d'API REST ",
+        "Contribution aux projets de développement web de l'entreprise",
+        "Collaboration avec les équipes produit et design "
+      ],
+      "technologies": ""
     },
     {
       "periode": "Mai – juin 2024",
       "poste": "Stage de développeuse web",
       "entreprise": "Fun High Tech, Abomey-Calavi",
-      "missions": [],
-      "technologies": "PHP, Bootstrap"
+      "missions": [
+        "Développement d'applications web avec PHP et Bootstrap \n\n\n",
+        "Intégration d'interfaces utilisateur responsives",
+        "Tests, débogage et optimisation du code pour de meilleures performances "
+      ],
+      "technologies": ""
     }
   ],
   "projets": [
