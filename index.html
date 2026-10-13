@@ -20,6 +20,7 @@
   Pour modifier le contenu, on passe par le dashboard (/admin/), pas par ce fichier.
 -->
 
+<div class="progression" aria-hidden="true"></div>
 <header class="barre">
   <div class="wrap">
     <a class="logo" href="#haut" aria-label="Marcella Chanhoun, retour en haut de la page" title="Marcella Chanhoun">
@@ -51,6 +52,7 @@
 <div class="wrap" id="haut">
   <main>
     <div class="hero" data-zone="accueil"></div>
+    <div class="defilement" data-zone="defilement"></div>
 
     <section id="apropos">
       <h2>À propos</h2>
@@ -94,28 +96,37 @@
     </section>
 
     <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p class="intro" data-zone="contact-message"></p>
-      <div class="contact-grille">
-        <form class="carte" method="POST" action="https://api.web3forms.com/submit" data-zone="formulaire">
+      <div class="bloc-sombre contact-grille">
+        <div class="contact-texte">
+          <p class="sur-titre">Travaillons ensemble</p>
+          <h2>Contact</h2>
+          <p class="intro" data-zone="contact-message"></p>
+          <div data-zone="coordonnees"></div>
+        </div>
+        <form method="POST" action="https://api.web3forms.com/submit" data-zone="formulaire">
           <input type="hidden" name="access_key" value="">
           <input type="hidden" name="subject" value="Nouveau message depuis le portfolio">
           <input type="hidden" name="from_name" value="Portfolio">
           <input type="checkbox" name="botcheck" class="cache" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label for="nom">Nom</label>
-          <input id="nom" name="nom" type="text" autocomplete="name" required>
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
+          <div class="deux-colonnes">
+            <div>
+              <label for="nom">Nom</label>
+              <input id="nom" name="nom" type="text" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
           <label for="message">Message</label>
           <textarea id="message" name="message" required></textarea>
           <label class="accord">
             <input type="checkbox" name="consentement" value="oui" required>
             <span><strong>J'accepte la clause de confidentialité.</strong> <span data-zone="confidentialite"></span></span>
           </label>
-          <button class="btn btn-main" type="submit">Envoyer le message</button>
+          <button class="btn btn-accent" type="submit">Envoyer le message</button>
           <p class="retour" role="status"></p>
         </form>
-        <div data-zone="coordonnees"></div>
       </div>
     </section>
   </main>

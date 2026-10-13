@@ -61,12 +61,11 @@
 
   function accueil(a) {
     var mots = String(a.nom || '').trim().split(' ');
-    var nom = e(mots.shift()) + (mots.length ? '<br>' + e(mots.join(' ')) : '');
-    return '<h1>' + nom + '</h1>' +
+    var nom = e(mots.shift()) + (mots.length ? '<br><span class="degrade">' + e(mots.join(' ')) + '</span>' : '');
+    return '<span class="bulles" aria-hidden="true"><i></i><i></i><i></i></span>' +
+      '<h1>' + nom + '</h1>' +
       si(a.titre, '<p class="titre">' + e(a.titre) + '</p>') +
-      si(a.accroche, '<p class="lede">' + e(a.accroche) + '</p>') +
-      si([a.disponibilite, a.disponibiliteDate],
-        '<p class="dispo">' + e(a.disponibilite) + ' <strong>' + e(a.disponibiliteDate) + '</strong></p>');
+      si(a.accroche, '<p class="lede">' + e(a.accroche) + '</p>');
   }
 
   function qui(p, nom) {
@@ -92,8 +91,10 @@
       '<h3>' + e(s.titre) + '</h3>' + si(s.description, '<p>' + e(s.description) + '</p>') + '</article>';
   }
 
-  function competence(c) {
-    return '<div><h4>' + e(c.titre) + '</h4><p>' + e(c.elements) + '</p></div>';
+  function competence(c, n) {
+    var elements = String(c.elements || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+    return '<div class="carte competence c-' + (n % 4) + '"><h4>' + e(c.titre) + '</h4><ul class="techs">' +
+      elements.map(function (x) { return '<li class="c' + (n % 4) + '">' + e(x) + '</li>'; }).join('') + '</ul></div>';
   }
 
   function experience(x) {
@@ -140,15 +141,47 @@
       '</div>';
   }
 
+  // Bande qui défile sous l'accueil : toutes les technologies de la section Compétences.
+  function defilement(competences) {
+    var mots = [];
+    (competences || []).forEach(function (c) {
+      if (/savoir|méthode/i.test(c.titre || '')) return; // on garde les outils techniques
+      String(c.elements || '').split(',').forEach(function (x) { if (x.trim()) mots.push(x.trim()); });
+    });
+    if (!mots.length) return '';
+    var liste = mots.map(function (m, i) { return '<li class="c' + (i % 4) + '">' + e(m) + '</li>'; }).join('');
+    // La liste est écrite deux fois : quand la première sort de l'écran, la seconde prend sa place (boucle sans fin).
+    return '<div class="piste"><ul>' + liste + '</ul><ul aria-hidden="true">' + liste + '</ul></div>';
+  }
+
+  // Carrousel des captures d'un projet (flèches, points, défilement automatique).
+  function carrousel(p) {
+    var images = (p.images || []).filter(function (img) { return rempli(img.src); });
+    if (!images.length) return '';
+    var plusieurs = images.length > 1;
+    return '<div class="carrousel' + (p.format === 'telephone' ? ' tel' : '') + '" data-carrousel>' +
+      '<div class="diapos">' + images.map(function (img) {
+        return '<figure class="diapo"><img src="' + source(img.src) + '" alt="' + e(img.alt) + '" loading="lazy"></figure>';
+      }).join('') + '</div>' +
+      (plusieurs ?
+        '<button class="fleche-c prec" type="button" aria-label="Image précédente">‹</button>' +
+        '<button class="fleche-c suiv" type="button" aria-label="Image suivante">›</button>' +
+        '<div class="points">' + images.map(function (img, n) {
+          return '<button type="button" aria-label="Image ' + (n + 1) + '"' + (n ? '' : ' aria-current="true"') + '></button>';
+        }).join('') + '</div>' : '') +
+      '</div>';
+  }
+
   function carteProjet(p, i) {
-    var image = (p.images || []).filter(function (img) { return rempli(img.src); })[0];
     var github = (p.liens || []).filter(function (l) { return rempli(l.url); })[0];
     return '<article class="carte projet ' + (p.format === 'telephone' ? 'format-tel' : '') + '">' +
-      si(image, '<div class="vignette"><img src="' + source(image && image.src) + '" alt="' + e(image && image.alt) + '" loading="lazy"></div>') +
+      carrousel(p) +
       '<div class="projet-corps">' +
         '<h3>' + e(p.titre) + '</h3>' +
         si(p.resume, '<p>' + e(p.resume) + '</p>') +
-        si(p.technologies, '<p class="stack">' + e(p.technologies) + '</p>') +
+        si(p.technologies, '<ul class="techs">' + String(p.technologies).split(',').map(function (t, n) {
+          return t.trim() ? '<li class="c' + (n % 4) + '">' + e(t.trim()) + '</li>' : '';
+        }).join('') + '</ul>') +
         '<div class="projet-actions">' +
           '<button class="btn btn-main" type="button" data-detail="' + i + '">Voir détail</button>' +
           si(github, '<a class="btn btn-ghost" href="' + lien(github && github.url) + '" target="_blank" rel="noopener">GitHub</a>') +
@@ -186,6 +219,7 @@
     var a = c.accueil || {}, p = c.apropos || {}, ct = c.contact || {};
 
     remplir('accueil', accueil(a));
+    remplir('defilement', defilement(c.competences));
     remplir('qui', qui(p, a.nom));
     remplir('cv', boiteCv(p));
     remplir('formations', chaque(p.formations, formation));
@@ -206,6 +240,7 @@
     adresseContact = String(ct.email || '').trim();
 
     animer();
+    lancerCarrousels();
 
     // Cache les sections vides (ex. aucun service saisi).
     ['services', 'competences', 'projets'].forEach(function (id) {
@@ -331,6 +366,53 @@
       observateur.observe(bloc);
     });
   }
+
+  /* ---------- Carrousels des projets ---------- */
+
+  var minuteriesCarrousel = [];
+
+  function lancerCarrousels() {
+    minuteriesCarrousel.forEach(clearInterval);
+    minuteriesCarrousel = [];
+    document.querySelectorAll('[data-carrousel]').forEach(function (car) {
+      var piste = car.querySelector('.diapos');
+      var points = car.querySelectorAll('.points button');
+      if (!points.length) return;
+      var total = points.length;
+
+      function actuelle() { return Math.round(piste.scrollLeft / piste.clientWidth); }
+      function aller(n) {
+        n = (n + total) % total; // après la dernière image, on revient à la première
+        piste.scrollTo({ left: n * piste.clientWidth, behavior: sansAnimation ? 'auto' : 'smooth' });
+      }
+
+      car.querySelector('.prec').addEventListener('click', function () { aller(actuelle() - 1); });
+      car.querySelector('.suiv').addEventListener('click', function () { aller(actuelle() + 1); });
+      points.forEach(function (pt, n) { pt.addEventListener('click', function () { aller(n); }); });
+
+      // Le point actif suit l'image affichée (y compris quand on fait glisser au doigt).
+      piste.addEventListener('scroll', function () {
+        var n = actuelle();
+        points.forEach(function (pt, k) { pt.toggleAttribute('aria-current', k === n); });
+      }, { passive: true });
+
+      // Défilement automatique, en pause quand la souris ou le clavier est sur le carrousel.
+      if (sansAnimation) return;
+      var pause = false;
+      ['mouseenter', 'focusin'].forEach(function (t) { car.addEventListener(t, function () { pause = true; }); });
+      ['mouseleave', 'focusout'].forEach(function (t) { car.addEventListener(t, function () { pause = false; }); });
+      minuteriesCarrousel.push(setInterval(function () { if (!pause && !document.hidden) aller(actuelle() + 1); }, 4500));
+    });
+  }
+
+  /* ---------- Barre de progression de lecture ---------- */
+
+  var barre = document.querySelector('.progression');
+  function progression() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    barre.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+  }
+  addEventListener('scroll', progression, { passive: true });
 
   /* ---------- Chargement du contenu ---------- */
 

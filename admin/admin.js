@@ -32,9 +32,7 @@
       cle: 'accueil', type: 'objet', champs: [
         { cle: 'nom', label: 'Nom', type: 'texte' },
         { cle: 'titre', label: 'Titre', type: 'texte', aide: 'Ex. : Développeuse web et mobile' },
-        { cle: 'accroche', label: 'Phrase d\'accroche', type: 'texteLong' },
-        { cle: 'disponibilite', label: 'Disponibilité', type: 'texte', aide: 'Ex. : Stage de 3 mois' },
-        { cle: 'disponibiliteDate', label: 'Date de disponibilité (en gras)', type: 'texte', aide: 'Ex. : à partir du 11 janvier 2027' }
+        { cle: 'accroche', label: 'Phrase d\'accroche', type: 'texteLong' }
       ] } },
 
     { id: 'apropos', titre: 'À propos', ancre: 'apropos', champ: {
