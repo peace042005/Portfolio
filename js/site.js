@@ -77,8 +77,9 @@
 
   function boiteCv(p) {
     if (!rempli(p.cv)) return '';
-    return '<p>Mon CV à jour, au format PDF.</p>' +
-      '<a class="btn btn-main" href="' + source(p.cv) + '" download>Télécharger mon CV</a>';
+    return '<a class="btn btn-main btn-icone" href="' + source(p.cv) + '" download>' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      'Télécharger mon CV</a>';
   }
 
   function formation(f) {
