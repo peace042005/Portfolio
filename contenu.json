@@ -1,6 +1,6 @@
 {
   "accueil": {
-    "nom": "Marcella Chanhoun",
+    "nom": "Marcella CHANHOUN",
     "titre": "Analyste Informatique et Programmeuse",
     "accroche": "Étudiante en BUT 3 Informatique Parcours Réalisation d'Application. ",
     "disponibilite": "",
@@ -9,8 +9,8 @@
   "apropos": {
     "photo": "img/marcella.jpg",
     "paragraphes": [
-      "Je suis en BUT 3 Informatique, parcours réalisation d'applications, à l'IUT Nord Franche-Comté. Avant d'arriver en France, j'ai obtenu une licence en analyse informatique et programmation à l'ENEAM, à Cotonou, et commencé un master en informatique décisionnelle.",
-      "Ce double parcours m'a appris tout le cycle d'un projet : l'analyse et la modélisation UML, le développement, puis la mise en production. Trois stages en entreprise au Bénin m'ont permis de travailler sur de vraies applications, en équipe.",
+      "Je suis en BUT 3 Informatique, parcours réalisation d’applications, à l’IUT Nord Franche-Comté, après une licence en analyse informatique et programmation et une première année de master en informatique décisionnelle à l’ENEAM, au Bénin. Étudier dans deux pays m’a appris à m’adapter rapidement à de nouveaux environnements de travail.",
+      "Ces formations m’ont permis de maîtriser tout le cycle d’un projet : l’analyse et la modélisation UML, le développement, puis la mise en production. Trois stages en entreprise au Bénin m’ont permis de travailler sur de vraies applications, en équipe.",
       "Je recherche un stage de 3 mois à partir de janvier 2027 pour progresser au sein d'une équipe de développement."
     ],
     "qualites": [
@@ -33,11 +33,11 @@
       },
       {
         "periode": "2022 – 2025",
-        "intitule": "Licence en analyse informatique et programmation",
+        "intitule": "Licence en Informatique de Gestion spécialité Analyse Informatique et Programmation",
         "lieu": "ENEAM-UAC, Cotonou"
       }
     ],
-    "veille": "Je me tiens informée principalement grâce à LinkedIn, où je suis des développeurs, des entreprises du numérique et des communautés autour de Laravel, React et Flutter. J'y découvre les nouvelles versions des outils que j'utilise et des retours d'expérience de professionnels."
+    "veille": "Je me tiens informée principalement grâce à LinkedIn, où je suis des développeurs, des entreprises du numérique et des communautés. J'y découvre les nouvelles versions des outils que j'utilise et des retours d'expérience de professionnels."
   },
   "services": [
     {
