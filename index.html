@@ -98,10 +98,11 @@
       <h2>Contact</h2>
       <p class="intro" data-zone="contact-message"></p>
       <div class="contact-grille">
-        <form class="carte" method="POST" data-zone="formulaire">
-          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" class="cache" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form class="carte" method="POST" action="https://api.web3forms.com/submit" data-zone="formulaire">
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="Nouveau message depuis le portfolio">
+          <input type="hidden" name="from_name" value="Portfolio">
+          <input type="checkbox" name="botcheck" class="cache" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label for="nom">Nom</label>
           <input id="nom" name="nom" type="text" autocomplete="name" required>
           <label for="email">E-mail</label>

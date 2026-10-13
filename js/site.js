@@ -199,9 +199,10 @@
     remplir('reseaux', reseaux(ct.liens));
     remplir('pied', e(c.piedDePage));
 
-    // Le formulaire envoie les messages à l'adresse e-mail du contenu (service FormSubmit).
+    // Clé Web3Forms (saisie dans le tableau de bord) : elle indique à quelle adresse envoyer les messages.
     var form = document.querySelector('[data-zone="formulaire"]');
-    if (form) form.action = 'https://formsubmit.co/' + String(ct.email || '').trim();
+    if (form) form.elements.access_key.value = String(ct.cleFormulaire || '').trim();
+    adresseContact = String(ct.email || '').trim();
 
     animer();
 
@@ -263,44 +264,40 @@
 
   /* ---------- Formulaire de contact ---------- */
 
-  // Le message part vers FormSubmit, qui le transfère à l'adresse e-mail du portfolio.
-  // 1er essai : envoi en arrière-plan (fetch) pour rester sur la page.
-  // Si FormSubmit refuse (formulaire pas encore activé, réseau…), on passe à l'envoi
-  // classique : la page de FormSubmit s'ouvre, explique la situation, puis revient sur le site.
+  // Le message est envoyé au service Web3Forms, qui le transfère par e-mail.
+  // L'envoi se fait en arrière-plan (fetch) : le visiteur reste sur la page.
   var formulaire = document.querySelector('[data-zone="formulaire"]');
-  var envoiClassique = false;
+  var adresseContact = '';
 
   formulaire.addEventListener('submit', function (ev) {
-    if (envoiClassique) return; // on laisse le navigateur envoyer normalement
     ev.preventDefault();
     var retour = formulaire.querySelector('.retour');
     var bouton = formulaire.querySelector('button[type="submit"]');
+
+    function echec() {
+      retour.className = 'retour erreur';
+      retour.textContent = 'Le message n\'a pas pu être envoyé. Vous pouvez m\'écrire directement à ' + (adresseContact || 'l\'adresse indiquée') + '.';
+    }
+
+    if (!formulaire.elements.access_key.value) return echec(); // clé pas encore saisie
+
     bouton.disabled = true;
     bouton.textContent = 'Envoi…';
     retour.className = 'retour';
     retour.textContent = '';
 
-    fetch(formulaire.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+    fetch(formulaire.action, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(formulaire)
     }).then(function (r) { return r.json(); }).then(function (rep) {
-      if (String(rep.success) !== 'true') throw new Error(rep.message || 'refus');
+      if (!rep.success) throw new Error(rep.message);
       formulaire.reset();
       retour.className = 'retour ok';
       retour.textContent = 'Merci, votre message a bien été envoyé. Je vous réponds rapidement.';
+    }).catch(echec).then(function () {
       bouton.disabled = false;
       bouton.textContent = 'Envoyer le message';
-    }).catch(function () {
-      // Après l'envoi, FormSubmit renvoie le visiteur sur la section Contact.
-      var suite = formulaire.querySelector('input[name="_next"]') || document.createElement('input');
-      suite.type = 'hidden';
-      suite.name = '_next';
-      suite.value = location.href.split('#')[0] + '#contact';
-      formulaire.appendChild(suite);
-      envoiClassique = true;
-      bouton.disabled = false;
-      formulaire.requestSubmit ? formulaire.requestSubmit() : formulaire.submit();
     });
   });
 

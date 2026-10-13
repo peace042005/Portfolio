@@ -5,7 +5,7 @@
  * 2. On lit contenu.json directement dans le dépôt GitHub.
  * 3. Des formulaires sont fabriqués automatiquement à partir du SCHEMA ci-dessous.
  * 4. « Enregistrer » envoie contenu.json (et les images choisies) au dépôt en UN SEUL commit.
- *    Netlify met alors le site à jour, et le robot GitHub refait le PDF.
+ *    Vercel met alors le site à jour, et le robot GitHub refait le PDF.
  */
 (function () {
   'use strict';
@@ -108,7 +108,9 @@
     { id: 'contact', titre: 'Contact', ancre: 'contact', champ: {
       cle: 'contact', type: 'objet', champs: [
         { cle: 'message', label: 'Petit message', type: 'texteLong' },
-        { cle: 'email', label: 'Adresse e-mail', type: 'email', aide: 'Elle reçoit les messages du formulaire. Si tu la changes, le premier message envoyé déclenche un e-mail d\'activation de FormSubmit à valider.' },
+        { cle: 'email', label: 'Adresse e-mail', type: 'email', aide: 'Affichée sur le site.' },
+        { cle: 'cleFormulaire', label: 'Clé du formulaire (Web3Forms)', type: 'texte',
+          aide: 'Clé reçue par e-mail après inscription sur web3forms.com. Les messages du formulaire arrivent à l\'adresse utilisée pour l\'inscription. Cette clé peut être publique.' },
         { cle: 'confidentialite', label: 'Clause de confidentialité', type: 'texteLong' },
         { cle: 'liens', label: 'Liens', type: 'liste', titreElement: 'libelle', ajouter: 'Ajouter un lien',
           aide: 'Les liens GitHub et LinkedIn apparaissent aussi en icônes en haut du site.', champs: [

@@ -1,7 +1,7 @@
 # Portfolio de Marcella Chanhoun
 
-Site : https://portfolio-marcella-chanhoun.netlify.app
-Tableau de bord : https://portfolio-marcella-chanhoun.netlify.app/admin/
+Site : https://portfolio-marcella-chanhoun.vercel.app
+Tableau de bord : https://portfolio-marcella-chanhoun.vercel.app/admin/
 
 ## Comment ça marche
 
@@ -9,7 +9,7 @@ Tableau de bord : https://portfolio-marcella-chanhoun.netlify.app/admin/
 Tableau de bord (/admin/)
    │  « Enregistrer » : un commit sur GitHub (contenu.json + images)
    ▼
-Dépôt GitHub ──► Netlify met le site à jour (1 à 2 min)
+Dépôt GitHub ──► Vercel met le site à jour (moins d'une minute)
    │
    └──► Le robot GitHub (Actions) refait portfolio.pdf (3 à 4 min)
 ```
@@ -42,10 +42,14 @@ Dépôt GitHub ──► Netlify met le site à jour (1 à 2 min)
    S'il échoue avec une erreur de permission : **Settings → Actions → General → Workflow permissions →
    Read and write permissions**, puis relancer avec **Run workflow**.
 
-### 2. Netlify
-1. Sur https://app.netlify.com : **Add new site → Import an existing project → GitHub** → dépôt `portfolio`.
-2. Build command : **vide**. Publish directory : **`.`**
-3. **Site configuration → Change site name** : `marcella-chanhoun`.
+### 2. Vercel (hébergement gratuit)
+1. Sur https://vercel.com : **Sign Up → Continue with GitHub** (offre **Hobby**, gratuite).
+2. **Add New… → Project** → importer le dépôt `Portfolio`.
+3. **Project Name** : `portfolio-marcella-chanhoun`. **Framework Preset** : `Other`. Ne rien changer d'autre.
+4. **Deploy**. Le site est sur https://portfolio-marcella-chanhoun.vercel.app
+
+Les réglages (cache, page admin non indexée) sont dans `vercel.json`.
+L'offre gratuite autorise 100 mises en ligne par jour : largement assez.
 
 ### 3. Le jeton d'accès pour le tableau de bord
 1. GitHub → photo de profil → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
@@ -57,9 +61,10 @@ Dépôt GitHub ──► Netlify met le site à jour (1 à 2 min)
 Ne jamais mettre ce jeton dans le code, dans un fichier du dépôt ou dans un message.
 S'il fuit : le supprimer sur la même page GitHub, il ne fonctionne plus immédiatement.
 
-### 4. Le formulaire de contact
-Le premier message envoyé depuis le site déclenche un e-mail de FormSubmit à l'adresse de contact :
-cliquer sur le lien d'activation. Les messages suivants arrivent directement.
+### 4. Le formulaire de contact (Web3Forms, gratuit)
+1. Sur https://web3forms.com : saisir son adresse e-mail → **Create Access Key**. La clé arrive par e-mail.
+2. Tableau de bord → **Contact** → coller la clé dans **Clé du formulaire (Web3Forms)** → **Enregistrer**.
+Les messages arrivent à l'adresse utilisée pour créer la clé. Cette clé n'est pas un secret : elle peut être visible dans le site.
 
 ## Utiliser le tableau de bord
 1. Ouvrir `/admin/`, coller le jeton. Il reste dans l'onglet et disparaît à sa fermeture.
