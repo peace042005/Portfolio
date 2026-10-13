@@ -42,7 +42,7 @@
   "services": [
     {
       "titre": "Applications web",
-      "description": "Des applications complètes avec Laravel et React : espaces membres, tableaux de bord, paiement en ligne."
+      "description": "Des applications web complètes, du back-end au front-end : espaces membres, tableaux de bord, paiement en ligne."
     },
     {
       "titre": "Applications mobiles",
@@ -64,7 +64,7 @@
     },
     {
       "titre": "Frameworks",
-      "elements": "Laravel, React, Next.js, Flutter, Node.js, Bootstrap"
+      "elements": "Laravel,Symfony, React, Next.js, Flutter, Node.js, Bootstrap, Symfony UX"
     },
     {
       "titre": "Bases de données",
@@ -72,7 +72,7 @@
     },
     {
       "titre": "Outils",
-      "elements": "Git, GitHub, GitLab, Docker, Figma, Canva"
+      "elements": "Git, GitHub, GitLab, Docker, Figma, Canva, Scripts shell"
     },
     {
       "titre": "Méthodes",
