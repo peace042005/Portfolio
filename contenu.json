@@ -130,7 +130,12 @@
       "defi": "Mon environnement local ne pouvait pas se connecter à la base PostgreSQL de production. J’ai développé avec SQLite, et j’ai ajouté dans la chaîne d’intégration continue des tests sur PostgreSQL, dont un qui vérifie que les migrations correspondent bien aux entités.",
       "technologies": "Symfony 7, PHP 8.3, Doctrine, PostgreSQL, Twig, Bootstrap, Chart.js, PHPUnit, PHPStan, Docker, GitHub Actions",
       "format": "ecran",
-      "images": [],
+      "images": [
+        {
+          "src": "img/screenshot-2026-11-15-160949.jpg",
+          "alt": ""
+        }
+      ],
       "demo": {
         "lien": "https://regeev.onrender.com",
         "comptes": [
