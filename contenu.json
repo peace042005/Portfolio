@@ -120,15 +120,56 @@
   ],
   "projets": [
     {
+      "titre": "ReGeev",
+      "resume": "Une plateforme de dons d’invendus alimentaires : les commerces publient leurs invendus, les associations les réservent et viennent les récupérer, et un tableau de bord public mesure l’impact contre le gaspillage.",
+      "cadre": "Projet personnel",
+      "dates": "Novembre 2026",
+      "equipe": "Projet individuel",
+      "role": "J’ai mené le projet de bout en bout : cahier des charges et conception UML, développement, tests automatisés, intégration continue et mise en production.",
+      "fonctionnalites": "Trois espaces (commerce, association, administrateur). Publication de lots avec un cycle de vie complet, de la publication au retrait. Réservation avec code de retrait. Validation des associations par l’administrateur. Tableau de bord d’impact (kg sauvés, dons par mois, par catégorie et par ville), API JSON et export CSV.",
+      "defi": "Mon environnement local ne pouvait pas se connecter à la base PostgreSQL de production. J’ai développé avec SQLite, et j’ai ajouté dans la chaîne d’intégration continue des tests sur PostgreSQL, dont un qui vérifie que les migrations correspondent bien aux entités.",
+      "technologies": "Symfony 7, PHP 8.3, Doctrine, PostgreSQL, Twig, Bootstrap, Chart.js, PHPUnit, PHPStan, Docker, GitHub Actions",
+      "format": "ecran",
+      "images": [],
+      "demo": {
+        "lien": "https://regeev.onrender.com",
+        "comptes": [
+          {
+            "libelle": "Commerce",
+            "valeur": "commerce@regeev.test"
+          },
+          {
+            "libelle": "Association",
+            "valeur": "association@regeev.test"
+          },
+          {
+            "libelle": "Administrateur",
+            "valeur": "admin@regeev.test"
+          },
+          {
+            "libelle": "Mot de passe",
+            "valeur": "regeev123"
+          }
+        ],
+        "note": ""
+      },
+      "liens": [
+        {
+          "libelle": "Code Source",
+          "url": "https://github.com/peace042005/regeev"
+        }
+      ]
+    },
+    {
       "titre": "Market'Art",
       "resume": "Une marketplace où des artisans vendent leurs créations, avec un espace client, un espace artisan et une administration.",
       "cadre": "Projet universitaire, licence 3e année (ENEAM), puis poursuivi seule",
       "dates": "Novembre 2024 – janvier 2025, reprise en 2026",
-      "equipe": "",
+      "equipe": "2 personnes",
       "role": "J'ai développé l'espace administrateur et l'espace artisan, puis j'ai repris le projet seule pour le sécuriser et le mettre en ligne.",
-      "fonctionnalites": "",
+      "fonctionnalites": "Catalogue et commande côté client. Gestion de l’inventaire avec photos et suivi des commandes côté artisan. Abonnements des artisans et tableau de bord côté administrateur. Accès aux pages contrôlé par rôle.",
       "defi": "Un artisan pouvait voir et modifier les articles des autres. J'ai mis en place un contrôle d'accès par rôle et filtré chaque requête sur l'utilisateur connecté.",
-      "technologies": "Laravel 10, React avec Inertia.js, Blade, MySQL, Docker",
+      "technologies": "Laravel 10, React avec Inertia.js, Blade, MySQL, Docker, Render",
       "format": "ecran",
       "images": [
         {
@@ -170,8 +211,8 @@
       "resume": "Une plateforme de salles de sport : on trouve une salle sur la carte, on s'y abonne et on achète des équipements, avec un paiement Mobile Money ou carte.",
       "cadre": "Projet universitaire, licence (ENEAM)",
       "dates": "Juin – juillet 2024, mise en ligne en 2026",
-      "equipe": "",
-      "role": "",
+      "equipe": "2 personnes",
+      "role": "Développer le Front-End. En 2026, j’ai repris le projet pour sécuriser les paiements, cloisonner les données des gérants et le mettre en ligne.",
       "fonctionnalites": "Trois espaces (administrateur, gérant de salle et utilisateur), carte des salles, abonnements, vente d'équipements et e-mails de confirmation.",
       "defi": "Un paiement était validé à partir d'une information envoyée par le navigateur, donc falsifiable. Le serveur vérifie maintenant chaque transaction directement auprès de FedaPay, y compris le montant.",
       "technologies": "Laravel 11, Blade, Bootstrap, FedaPay, Google Maps, Docker",
@@ -217,8 +258,8 @@
       "cadre": "Projet universitaire (ENEAM)",
       "dates": "Janvier – février 2025, version web en 2026",
       "equipe": "4 personnes",
-      "role": "J'ai développé la fonctionnalité « Mes billets » (modèle de données, appel à l'API et page), puis préparé la version web et la mise en ligne.",
-      "fonctionnalites": "",
+      "role": "J’ai développé la fonctionnalité « Mes billets » (modèle de données, appel à l’API et écran). En 2026, j’ai corrigé l’API (droits sur les billets, contrôle des places disponibles), préparé la version web et mis l’ensemble en ligne.",
+      "fonctionnalites": "Liste et détail des événements. Achat de billets selon leur type. Écran « Mes billets ». Connexion par jeton (Sanctum). Espace web d’administration des événements.",
       "defi": "L'adresse de l'API était écrite en dur dans l'application. Je l'ai rendue configurable, et la version web appelle automatiquement l'API du même site.",
       "technologies": "Flutter, Dart, Laravel 10, Sanctum, Docker",
       "format": "telephone",
@@ -254,47 +295,6 @@
         {
           "libelle": "Code de l'API",
           "url": "https://github.com/peace042005/Tickify_Api"
-        }
-      ]
-    },
-    {
-      "titre": "ReGeev",
-      "resume": "Une plateforme de dons d’invendus alimentaires : les commerces publient leurs invendus, les associations les réservent et viennent les récupérer, et un tableau de bord public mesure l’impact contre le gaspillage.",
-      "cadre": "Projet personnel",
-      "dates": "Novembre 2026",
-      "equipe": "Projet individuel",
-      "role": "J’ai mené le projet de bout en bout : cahier des charges et conception UML, développement, tests automatisés, intégration continue et mise en production.",
-      "fonctionnalites": "Trois espaces (commerce, association, administrateur). Publication de lots avec un cycle de vie complet, de la publication au retrait. Réservation avec code de retrait. Validation des associations par l’administrateur. Tableau de bord d’impact (kg sauvés, dons par mois, par catégorie et par ville), API JSON et export CSV.",
-      "defi": "Mon environnement local ne pouvait pas se connecter à la base PostgreSQL de production. J’ai développé avec SQLite, et j’ai ajouté dans la chaîne d’intégration continue des tests sur PostgreSQL, dont un qui vérifie que les migrations correspondent bien aux entités.",
-      "technologies": "Symfony 7, PHP 8.3, Doctrine, PostgreSQL, Twig, Bootstrap, Chart.js, PHPUnit, PHPStan, Docker, GitHub Actions",
-      "format": "ecran",
-      "images": [],
-      "demo": {
-        "lien": "https://regeev.onrender.com",
-        "comptes": [
-          {
-            "libelle": "Commerce",
-            "valeur": "commerce@regeev.test"
-          },
-          {
-            "libelle": "Association",
-            "valeur": "association@regeev.test"
-          },
-          {
-            "libelle": "Administrateur",
-            "valeur": "admin@regeev.test"
-          },
-          {
-            "libelle": "Mot de passe",
-            "valeur": "regeev123"
-          }
-        ],
-        "note": ""
-      },
-      "liens": [
-        {
-          "libelle": "Code Source",
-          "url": "https://github.com/peace042005/regeev"
         }
       ]
     }
