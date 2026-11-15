@@ -256,6 +256,47 @@
           "url": "https://github.com/peace042005/Tickify_Api"
         }
       ]
+    },
+    {
+      "titre": "ReGeev",
+      "resume": "Une plateforme de dons d’invendus alimentaires : les commerces publient leurs invendus, les associations les réservent et viennent les récupérer, et un tableau de bord public mesure l’impact contre le gaspillage.",
+      "cadre": "Projet personnel",
+      "dates": "Novembre 2026",
+      "equipe": "Projet individuel",
+      "role": "J’ai mené le projet de bout en bout : cahier des charges et conception UML, développement, tests automatisés, intégration continue et mise en production.",
+      "fonctionnalites": "Trois espaces (commerce, association, administrateur). Publication de lots avec un cycle de vie complet, de la publication au retrait. Réservation avec code de retrait. Validation des associations par l’administrateur. Tableau de bord d’impact (kg sauvés, dons par mois, par catégorie et par ville), API JSON et export CSV.",
+      "defi": "Mon environnement local ne pouvait pas se connecter à la base PostgreSQL de production. J’ai développé avec SQLite, et j’ai ajouté dans la chaîne d’intégration continue des tests sur PostgreSQL, dont un qui vérifie que les migrations correspondent bien aux entités.",
+      "technologies": "Symfony 7, PHP 8.3, Doctrine, PostgreSQL, Twig, Bootstrap, Chart.js, PHPUnit, PHPStan, Docker, GitHub Actions",
+      "format": "ecran",
+      "images": [],
+      "demo": {
+        "lien": "https://regeev.onrender.com",
+        "comptes": [
+          {
+            "libelle": "Commerce",
+            "valeur": "commerce@regeev.test"
+          },
+          {
+            "libelle": "Association",
+            "valeur": "association@regeev.test"
+          },
+          {
+            "libelle": "Administrateur",
+            "valeur": "admin@regeev.test"
+          },
+          {
+            "libelle": "Mot de passe",
+            "valeur": "regeev123"
+          }
+        ],
+        "note": ""
+      },
+      "liens": [
+        {
+          "libelle": "Code Source",
+          "url": "https://github.com/peace042005/regeev"
+        }
+      ]
     }
   ],
   "contact": {
